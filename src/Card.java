@@ -1,4 +1,26 @@
-
-public class Card {
-
+//Models a card object
+public abstract class Card {
+	
+	//holds the card type i.g. illuminati, action, group, sp.group
+	String type, name;
+	
+	public String getType() {
+		return type;
+	}
+	
+	public void setType(String pType) {
+		type = pType;
+	}
+	
+	public String getName() {
+		return name;
+	}
+	
+	public void setName(String pName) {
+		name = pName;
+	}
+	
+	//override-able function for special abilities
+	public abstract void ability();
+	
 }
