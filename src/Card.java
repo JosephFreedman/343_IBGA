@@ -3,6 +3,7 @@ public abstract class Card {
 	
 	//holds the card type i.g. illuminati, action, group, sp.group
 	String type, name;
+	int effectNum;
 	
 	public String getType() {
 		return type;
