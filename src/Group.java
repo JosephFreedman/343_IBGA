@@ -7,8 +7,15 @@ public class Group extends Card {
 	int power, tPower, resistance, income;
 	ArrayList<String> alignments;
 	
-	//dead method to be overridden by subclasses
-	public void ability() {}
+	//holds a pseudo-library of functions that are used based on effectNum
+	public void ability() {
+		
+		//this holds the first card effect
+		if(this.getEffectNum()==1) {
+			//implementation of the ability
+		}
+	
+	}
 	
 	
 	public int getPower() {

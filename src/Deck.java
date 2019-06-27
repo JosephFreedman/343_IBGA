@@ -13,23 +13,21 @@ public class Deck {
 	static int[] gRes = { 5, 3 };
 	static int[] gInc = { 1, 1 };
 	static String[][] gAlignments = { {"Violent", "Weird"}, {"Peaceful", "Liberal"}, {}, {} };
+	static int[] gAbility = { 0, 1, 0, 0, 0, 0, 0, 2 };
 	//holds data for action cards
 	static String[] aNames = { "", "" };
 	
 	//constructs the deck from various card classes
 	public static ArrayList<Card> genDeck() {
-		//adds all normal groups to deck
+		//adds all groups to deck
 		for(int i=0;i<gNames.length;i++) {
 			Group nCard = new Group();
 			nCard.setType("Group");
 			nCard.setName(gNames[i]);
-			nCard.setEffectNum(0);
+			nCard.setEffectNum(gAbility[i]);
 			nCard.setAll(gPower[i], gTrans[i], gRes[i], gInc[i], gAlignments[i]);
 			mDeck.add(nCard);
 		}
-		
-		//TODO add special groups
-		
 		
 		//TODO add illuminati groups
 		
@@ -40,6 +38,7 @@ public class Deck {
 			nCard.setType("Action");
 			nCard.setName(aNames[i]);
 			nCard.setEffectNum(i);
+			mDeck.add(nCard);
 		}
 		
 		return mDeck;
