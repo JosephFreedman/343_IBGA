@@ -21,6 +21,14 @@ public abstract class Card {
 		name = pName;
 	}
 	
+	public int getEffectNum() {
+		return effectNum;
+	}
+	
+	public void setEffectNum(int pENum) {
+		effectNum = pENum;
+	}
+	
 	//override-able function for special abilities
 	public abstract void ability();
 	
