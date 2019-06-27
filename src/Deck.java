@@ -35,18 +35,14 @@ public class Deck {
 	static int[] gAbility = { 0, 1, 0, 0, 0, 0, 0 , 2, 0, 3, 0, 0, 0, 0, 4, 0, 0, 0, 5, 0, 0, 6, 7, 0, 0, 0, 0, 0, 0, 8,
 	 9, 10, 0, 0, 11, 12, 13, 14, 15, 0, 16, 0, 0, 0, 17, 18, 0, 19, 0, 0, 0, 0, 0, 0, 0, 20, 0, 0, 0, 21, 0, 0, 0, 0,
 	 22, 0, 0, 23, 24, 25, 0, 0, 26, 27, 0, 0, 0, 0, 28, 0, 0, 29, 0 };
-	//holds data for action cards
-<<<<<<< HEAD
-	static String[] aNames = { "", "" };
 	//holds data for illuminati cards
 	static String[] iNames = { "", "" };
 	static int[] iPower = {};
 	static int[] iInc = {};
-=======
+	//holds data for action cards
 	static String[] aNames = { "Assassination", "Bribery", "Computer Espionage", "Deep Agent", "Interference", 
 	 "Market Manipulation", "Media Campaign", "Murphy's Law", "Secrets Man Was Not Meant To Know", 
 	 "Senate Investigating Committee", "Slush Fund", "Swiss Bank Account", "Whispering Campaign", "White Collar Crime" };
->>>>>>> d9494765d36120a7032a3b5916c1272c1ee7eaa8
 	
 	//constructs the main deck from various card classes
 	public static ArrayList<Card> genMainDeck() {
