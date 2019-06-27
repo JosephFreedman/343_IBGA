@@ -7,15 +7,37 @@ public class Deck {
 	//holds copy of the main deck
 	static ArrayList<Card> mDeck = new ArrayList<Card>();
 	//holds data for standard groups
-	static String[] gNames = { "American Autoduel Association", "Antiwar Activists", "Big Media", "Boy Sprouts", "California", "CFL-AIO", "C.I.A.", "Comic Books", "Congressional Wives", "Convenience Stores", "Copy Shops", "Democrats", "Eco-Guerrillas", "Empty Vee", "Fast Food Chains", "F.B.I.", "Fiendish Fluoridators", "Flat Earthers", "Fnord Motor Company", "Fraternal Orders", "Girlie Magazines", "Goldfish Fanciers", "Hollywood", "Intellectuals", "KKK", "Libertarians", "Loan Sharks", "Local Police Departments", "The Men In Black", "Moonies", "Moral Minority", "Morticians", "Multinational Oil Companies", "Nephews of God", "New York", "Nuclear Power Companies", "Parent/Teacher Agglomeration", "Pentagon", "The Phone Company", "Post Office", "Professional Sports", "Psychiatrists", "Punk Rockers", "Republicans", "Robot Sea Monsters", "Society for Creative Anarchism", "South American Nazis", "Texas", "Tabacco & Liquor Companies", "Trekkies", "Triliberal Commission", "Underground Newspapers", "The United Nations", "Yuppies" };
-	static int[] gPower = { 1, 0 };
-	static int[] gTrans = { 0, 0 };
+	static String[] gNames = { "American Autoduel Association", "Anti-Nuclear Activists", "Antiwar Activists", 
+	 "Big Media", "Boy Sprouts", "California", "CFL-AIO", "Chinese Campaign Donors", "C.I.A.", "Clone Arrangers", 
+	 "Comic Books", "Congressional Wives", "Convenience Stores", "Copy Shops", "Cycle Ganges", "Democrats", 
+	 "Eco-Guerrillas", "Empty Vee", "Evil Geniuses for a Better Tomorrow", "Fast Food Chains", "F.B.I.", 
+	 "Federal Reserve", "Feminists", "Fiendish Fluoridators", "Flat Earthers", "Fnord Motor Company", 
+	 "Fraternal Orders", "Girlie Magazines", "Goldfish Fanciers", "Gun Lobby", "Hackers", "Health Food Stores", 
+	 "Hollywood", "Intellectuals", "International Cocaine Smugglers", "International Communist Conspiracy", 
+	 "I.R.S.", "Junk Mail", "KGB", "KKK", "L-4 Society", "Libertarians", "Loan Sharks", "Local Police Departments", 
+	 "Madison Avenue", "The Mafia", "The Men In Black", "Militia", "Moonies", "Moral Minority", "Morticians", 
+	 "Multinational Oil Companies", "Nephews of God", "New York", "Nuclear Power Companies", "Orbital Mind Control Lasers", 
+	 "Parent/Teacher Agglomeration", "Pentagon", "The Phone Company", "Phone Phreaks", "Post Office", 
+	 "Professional Sports", "Psychiatrists", "Punk Rockers", "Recyclers", "Republicans", "Robot Sea Monsters", 
+	 "Science Fiction Fans", "Semiconscious Liberation Army", "S.M.O.F.", "Society for Creative Anarchism", 
+	 "South American Nazis", "Survivalists", "Tabloids", "Texas", "Tabacco & Liquor Companies", "Trekkies", 
+	 "Triliberal Commission", "TV Preachers", "Underground Newspapers", "The United Nations", "Video Games", "Yuppies" };
+	static int[] gPower = { 1, 2, 0, 4, 0, 5, 6, 3, 6, 6, 1, 1, 1, 1, 0, 5, 0, 3, 0, 2, 4, 5, 2, 3, 1, 2, 3, 2, 0, 1, 1,
+	 1, 2, 0, 3, 7, 5, 1, 2, 2, 1, 1, 5, 0, 3, 7, 0, 2, 2, 2, 0, 6, 0, 7, 4, 4, 0, 6, 5, 0, 4, 2, 0, 0, 2, 4, 0, 0, 0, 1,
+	 0, 4, 0, 2, 6, 4, 0, 5, 3, 1, 1, 2, 1 };
+	static int[] gTrans = { 0, 0, 0, 3, 0, 0, 0, 0, 4, 2, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 2, 3, 0, 0, 0, 0, 0, 0, 0, 0, 1,
+	 0, 0, 0, 0, 0, 3, 0, 2, 0, 0, 0, 0, 0, 3, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 2, 1, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+	 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1 };
 	static int[] gRes = { 5, 3 };
 	static int[] gInc = { 1, 1 };
 	static String[][] gAlignments = { {"Violent", "Weird"}, {"Peaceful", "Liberal"}, {}, {} };
-	static int[] gAbility = { 0, 1, 0, 0, 0, 0, 0, 2 };
+	static int[] gAbility = { 0, 1, 0, 0, 0, 0, 0 , 2, 0, 3, 0, 0, 0, 0, 4, 0, 0, 0, 5, 0, 0, 6, 7, 0, 0, 0, 0, 0, 0, 8,
+	 9, 10, 0, 0, 11, 12, 13, 14, 15, 0, 16, 0, 0, 0, 17, 18, 0, 19, 0, 0, 0, 0, 0, 0, 0, 20, 0, 0, 0, 21, 0, 0, 0, 0,
+	 22, 0, 0, 23, 24, 25, 0, 0, 26, 27, 0, 0, 0, 0, 28, 0, 0, 29, 0 };
 	//holds data for action cards
-	static String[] aNames = { "", "" };
+	static String[] aNames = { "Assassination", "Bribery", "Computer Espionage", "Deep Agent", "Interference", 
+	 "Market Manipulation", "Media Campaign", "Murphy's Law", "Secrets Man Was Not Meant To Know", 
+	 "Senate Investigating Committee", "Slush Fund", "Swiss Bank Account", "Whispering Campaign", "White Collar Crime" };
 	
 	//constructs the deck from various card classes
 	public static ArrayList<Card> genDeck() {
