@@ -29,16 +29,36 @@ public class Deck {
 	static int[] gTrans = { 0, 0, 0, 3, 0, 0, 0, 0, 4, 2, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 2, 3, 0, 0, 0, 0, 0, 0, 0, 0, 1,
 	 0, 0, 0, 0, 0, 3, 0, 2, 0, 0, 0, 0, 0, 3, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 2, 1, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 	 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1 };
-	static int[] gRes = { 5, 3 };
-	static int[] gInc = { 1, 1 };
-	static String[][] gAlignments = { {"Violent", "Weird"}, {"Peaceful", "Liberal"}, {}, {} };
+	static int[] gRes = { 5, 5, 3, 6, 3, 4, 5, 2, 5, 6, 1, 4, 4, 3, 4, 4, 6, 3, 6, 4, 6, 7, 2, 5, 2, 4, 5, 2, 4, (0), 4, 3,
+	 0, 3, 5, 8, 5, 3, 6, 5, 2, 4, 5, 4, 3, 7, 6, 4, 4, 1, 4, 4, 4, 8, 4, 5, 5, 6, 6, 1, 3, 4, 6, 4, 2, 4, 6, 5, 8, 1, 4, 
+	 6, 6, 3, 6, 3, 4, 6, 6, 5, 3, 3, 4 };//(0) is Gun Lobby card which has variable res from its power
+	static int[] gInc = { 1, 1, 1, 3, 1, 5, 3, 3, 0, 1, 2, 1, 3, 4, 0, 3, 1, 4, 3, 3, 0, 6, 1, 1, 1, 2, 2, 3, 1, 1, 2, 2, 5,
+	 1, 5, 6, (0), 2, 0, 1, 0, 1, 6, 1, 2, 6, 1, 2, 3, 2, 1, 8, 2, 3, 3, 0, 1, 2, 3, 1, -1, 3, 2, 1, 3, 4, 2, 1, 0, 0, 1, 2, 
+	 2, 3, 4, 3, 3, 3, 4, 0, 3, 7, 5 };//(0) is I.R.S. card which collects 2MB from each player if possible
+	static String[][] gAlignments = { {"Violent", "Weird"}, {"Liberal"}, {"Peaceful", "Liberal"}, {"Liberal", "Straight"},
+	 {"Straight", "Peaceful"}, {"Liberal", "Weird", "Government"}, {"Liberal"}, {"Communist"}, {"Government", "Violent"}, 
+	 {"Violent", "Communist", "Criminal"}, {"Weird", "Violent"}, {"Conservative", "Straight"}, {"Straight"}, {"Peaceful"}, 
+	 {"Violent", "Weird"}, {"Liberal"}, {"Liberal", "Violent", "Weird"}, {}, {"Violent", "Weird"}, {"Straight"}, 
+	 {"Government", "Straight"}, {"Government"}, {"Liberal"}, {"Communist", "Fanatic"}, {"Weird", "Conservative"}, {"Peaceful"}, 
+	 {"Conservative"}, {"Liberal"}, {"Peaceful", "Fanatic"}, {"Conservative", "Violent"}, {"Weird", "Fanatic"}, {"Liberal"}, 
+	 {"Liberal"}, {"Weird", "Fanatic"}, {"Criminal"}, {"Communist"}, {"Criminal", "Government"}, {"Criminal"}, 
+	 {"Communist", "Violent"}, {"Conservative", "Violent"}, {"Weird"}, {"Fanatic"}, {"Criminal", "Violent"}, 
+	 {"Conservative", "Straight", "Violent"}, {}, {"Criminal", "Violent"}, {"Criminal", "Weird"}, {"Violent", "Conservative"}, 
+	 {"Peaceful", "Fanatic"}, {"Conservative", "Straight", "Fanatic"}, {"Straight", "Peaceful"}, {}, {"Conservative", "Fanatic"}, 
+	 {"Violent", "Criminal", "Government"}, {"Conservative"}, {"Communist"}, {"Peaceful", "Conservative", "Straight"}, 
+	 {"Government", "Violent", "Straight"}, {}, {"Criminal", "Liberal"}, {"Government"}, {"Violent", "Fanatic"}, {"Weird"}, {"Weird"}, 
+	 {"Liberal"}, {"Conservative"}, {"Violent", "Communist"}, {"Weird"}, {"Criminal", "Violent", "Liberal", "Weird", "Communist"}, 
+	 {"Weird"}, {"Violent", "Weird"}, {"Conservative", "Violent"}, {"Conservative", "Violent", "Fanatic"}, {"Weird"}, 
+	 {"Violent", "Conservative", "Government"}, {"Straight"}, {"Weird", "Fanatic"}, {"Liberal", "Straight"}, {"Straight", "Fanatic"}, 
+	 {"Communist", "Liberal"}, {"Liberal"}, {}, {"Conservative"} };
 	static int[] gAbility = { 0, 1, 0, 0, 0, 0, 0 , 2, 0, 3, 0, 0, 0, 0, 4, 0, 0, 0, 5, 0, 0, 6, 7, 0, 0, 0, 0, 0, 0, 8,
 	 9, 10, 0, 0, 11, 12, 13, 14, 15, 0, 16, 0, 0, 0, 17, 18, 0, 19, 0, 0, 0, 0, 0, 0, 0, 20, 0, 0, 0, 21, 0, 0, 0, 0,
 	 22, 0, 0, 23, 24, 25, 0, 0, 26, 27, 0, 0, 0, 0, 28, 0, 0, 29, 0 };
 	//holds data for illuminati cards
-	static String[] iNames = { "", "" };
-	static int[] iPower = {};
-	static int[] iInc = {};
+	static String[] iNames = { "The Society of Assassins", "The Network", "The Discordian Society", "THe UFOs",
+	 "The Servants of Cthulhu", "The Gnomes of Zurich", "The Bavarian Illuminati", "The Bermuda Triangle" };
+	static int[] iPower = {8, 7, 8, 6, 9, 7, 10, 8};
+	static int[] iInc = {8, 9, 8, 8, 7, 12, 9, 9 };
 	//holds data for action cards
 	static String[] aNames = { "Assassination", "Bribery", "Computer Espionage", "Deep Agent", "Interference", 
 	 "Market Manipulation", "Media Campaign", "Murphy's Law", "Secrets Man Was Not Meant To Know", 
