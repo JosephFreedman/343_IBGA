@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.List;
 
 //Models the power structure of a player
 public class PowerStructure {
@@ -31,6 +32,12 @@ public class PowerStructure {
 		pDest.updateOrder();
 	}
 	
+	
+//	----------------------------------------------------------
+//	I may use this code in the future but currently its a WIP
+//	----------------------------------------------------------
+//	
+//	
 //	//returns array list of all nodes in structure
 //	public ArrayList<PowerNode> totalNodes() {
 //		ArrayList<PowerNode> allNodes = new ArrayList<PowerNode>();
@@ -54,9 +61,6 @@ public class PowerStructure {
 //	}
 //	
 //	
-// 
-//	
-//	
 //	//lists all valid positions in a power structure
 //	public char[][] validAdditions() {
 //		char[][] positions;
@@ -67,16 +71,27 @@ public class PowerStructure {
 //		return positions;
 //	}
 	
-	//overloads method to list valid positions a node and its subsidiaries can be placed
-	public char[] validAdditions(PowerNode pNode) {
-		char[] positions = pNode.getGroup().getExits();
-		if(!positions.equals(null)) {
-			for(int i=0;i<positions.length;i++) {
-				if(positions[i]) { ; }
+	
+	//method to list valid positions a node and its subsidiaries can be placed
+	public String[] validAdditions(PowerNode pNode) {
+		String[] originalPos = pNode.getGroup().getExits();
+		if(!originalPos.equals(null) && pNode.getNext().size()>0) {
+			ArrayList<String> valPos = new ArrayList<String>();
+			for(int i=0;i<originalPos.length;i++) { valPos.add(originalPos[i]); }
+			ArrayList<PowerNode> children = pNode.getNext();
+			for(int i=0;i<children.size();i++) {
+				valPos.remove(children.get(i).getGroup().getEntrance());
+				for(int j=0;j<) {
+					
+				}
 			}
 		}
 		
 		return positions;
 	}
 	
+	//removes a given character from a list
+	public char[] removeChar(char[] list, char remove) {
+		List<Character> nList = list.subList(0,remove);
+	}
 }

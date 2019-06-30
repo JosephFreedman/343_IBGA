@@ -54,8 +54,8 @@ public class Deck {
 	static int[] gAbility = { 0, 1, 0, 0, 0, 0, 0 , 2, 0, 3, 0, 0, 0, 0, 4, 0, 0, 0, 5, 0, 0, 6, 7, 0, 0, 0, 0, 0, 0, 8,
 	 9, 10, 0, 0, 11, 12, 13, 14, 15, 0, 16, 0, 0, 0, 17, 18, 0, 19, 0, 0, 0, 0, 0, 0, 0, 20, 0, 0, 0, 21, 0, 0, 0, 0,
 	 22, 0, 0, 23, 24, 25, 0, 0, 26, 27, 0, 0, 0, 0, 28, 0, 0, 29, 0 };
-	static char[] gEntrance = {'w','w','w','e','w', 'w'};
-	static char[][] gExits = {{'e'}, {'n'}, null, {'n','s','w'}, null, {'n','s'}};
+	static String[] gEntrance = {"w","w","w","e","w", "w"};
+	static String[][] gExits = {{"e"}, {"n"}, null, {"n","s","w"}, null, {"n","s"}};
 	//holds data for illuminati cards
 	static String[] iNames = { "The Society of Assassins", "The Network", "The Discordian Society", "THe UFOs",
 	 "The Servants of Cthulhu", "The Gnomes of Zurich", "The Bavarian Illuminati", "The Bermuda Triangle" };
