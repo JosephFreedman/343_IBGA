@@ -6,6 +6,9 @@ public class Group extends Card {
 	//group attributes
 	int power, tPower, resistance, income;
 	ArrayList<String> alignments;
+	//data holding the entrance and exits for card expansions
+	char entrance;
+	char[] exits;
 	
 	//holds a pseudo-library of functions that are used based on effectNum
 	public void ability() {
@@ -58,12 +61,26 @@ public class Group extends Card {
 		alignments.add(pAlignment);
 	}
 	
+	public char getEntrance() {
+		return entrance;
+	}
+	
+	public char[] getExits() {
+		return exits;
+	}
+	
+	public void setExits(char[] pExits) {
+		exits = pExits;
+	}
+	
 	//sets all variables for the group
-	public void setAll(int p, int t, int r, int i, String[] a) {
+	public void setAll(int p, int t, int r, int i, String[] a, char ent, char[] ex) {
 		power = p;
 		tPower = t;
 		resistance = r;
 		income = i;
+		entrance = ent;
+		exits = ex;
 		for(int j=0;j<a.length;j++) { alignments.add(a[j]); }
 	}
 }

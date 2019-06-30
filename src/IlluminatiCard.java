@@ -2,6 +2,7 @@
 public class IlluminatiCard extends Card {
 	
 	int power, tPower, income;
+	char[] exits;
 	
 	//holds a pseudo-library of functions that are used based on effectNum
 	public void ability() {
@@ -37,6 +38,14 @@ public class IlluminatiCard extends Card {
 	
 	public void setIncome(int pIncome) {
 		income = pIncome;
+	}
+	
+	public char[] getExits() {
+		return exits;
+	}
+	
+	public void setExits(char[] pExits) {
+		exits = pExits;
 	}
 	
 }

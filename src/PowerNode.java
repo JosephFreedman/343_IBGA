@@ -1,14 +1,19 @@
+import java.util.ArrayList;
+
 //Emulates a card in the power structure
 public class PowerNode {
 
 	int order;
 	Card nCard;
-	PowerNode previous, next;
+	char attachment;
+	PowerNode previous;
+	ArrayList<PowerNode> next;
 	
-	public PowerNode(Card pCard, PowerNode pPrev, PowerNode pNext) {
+	public PowerNode(Card pCard, char pAttach, PowerNode pPrev) {
 		nCard = pCard;
+		attachment = pAttach;
 		previous = pPrev;
-		next = pNext;
+		next = null;
 		updateOrder();
 	}
 	
@@ -27,6 +32,39 @@ public class PowerNode {
 		return order;
 	}
 	
+	public Card getCard() {
+		return nCard;
+	}
 	
+	public Group getGroup() {
+		return (Group) nCard;
+	}
 	
+	public char getAttachment() {
+		return attachment;
+	}
+	
+	public void setAttachment(char pAttach) {
+		attachment = pAttach;
+	}
+	
+	public PowerNode getPrevious() {
+		return previous;
+	}
+	
+	public void setPrevious(PowerNode pNode) {
+		previous = pNode;
+	}
+	
+	public ArrayList<PowerNode> getNext() {
+		return next;
+	}
+	
+	public void addNext(PowerNode pNode) {
+		next.add(pNode);
+	}
+	
+	public void removeNext(PowerNode pNode) {
+		next.remove(pNode);
+	}
 }
