@@ -1,22 +1,26 @@
 package Game;
 
+import UI.MainGameScreen;
 import java.util.ArrayList;
 
 //Runs the game
 public class RunGame {
+	private MainGameScreen mainGameScreen;
 
 	PlayerNode currentPlayer;
 	ArrayList<Card> mDeck, iDeck, nDeck;
-	
-	public RunGame(int players) {
+
+	public RunGame(MainGameScreen mainGameScreen, int players) {
+		this.mainGameScreen = mainGameScreen;
+
 		String[] names = createPlayers(players);
 
 		boolean finished = false;
 		//builds card decks
 		ArrayList<Card> mDeck = Deck.genMainDeck();
 		ArrayList<Card> iDeck = Deck.genIllDeck(players);
-		ArrayList<Card> nDeck = new ArrayList<Card>();
-		
+		ArrayList<Card> nDeck = new ArrayList<>();
+
 		//generates a node loop of players
 		PlayerNode first = null, currentPlayer = null;
 		for(int i=0;i<players;i++) {
@@ -30,7 +34,7 @@ public class RunGame {
 				first.setPrevious(currentPlayer);
 			}
 		}
-		
+
 		//sets up neutral deck
 		int nCounter = 0, nIncrement = 0;;
 		while(nCounter<5) {
@@ -43,6 +47,8 @@ public class RunGame {
 		}
 		mDeck = Deck.shuffle(mDeck);
 
+		beginTheGame();
+
 		SequenceOfPlay sequenceOfPlay = new SequenceOfPlay();
 
 		//runs player turns until the game is won or quit is selected
@@ -52,7 +58,7 @@ public class RunGame {
 			currentPlayer = currentPlayer.getNext();
 			collectIncome(currentPlayer);
 			draw(currentPlayer);
-			actionPhase(currentPlayer);
+			//actionPhase(currentPlayer);
 			addTargets();
 			finished = checkVictory(currentPlayer);
 		}
@@ -67,8 +73,12 @@ public class RunGame {
 		return playerNames;
 	}
 
-	private boolean checkVictory() {
+	private boolean checkVictory(PlayerNode currentPlayer) {
 		return false;
+	}
+
+	private void beginTheGame() {
+		mainGameScreen.getChatScreen().print("Beginning the Game...");
 	}
 	
 	//draws a card for the given player

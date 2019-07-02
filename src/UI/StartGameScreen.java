@@ -36,7 +36,7 @@ public class StartGameScreen extends JFrame {
 		add(mainMenu());
 
 		pack();
-		setVisible(true);
+		//setVisible(true);
 		toFront();
 		new PlayerCountScreen(this, true);
 	}

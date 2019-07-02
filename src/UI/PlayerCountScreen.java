@@ -1,5 +1,7 @@
 package UI;
 
+import Game.RunGame;
+
 import java.awt.Dimension;
 import java.awt.GridLayout;
 
@@ -135,7 +137,14 @@ public class PlayerCountScreen extends JDialog {
 					players = 8;
 					break;
 			}
+
 			MainGameScreen mainGameScreen = new MainGameScreen(players);
+			try {
+				RunGame runGame = new RunGame(mainGameScreen, players);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+
             dispose();
 		};
 		twoPlayersBtn.addActionListener(evt);
