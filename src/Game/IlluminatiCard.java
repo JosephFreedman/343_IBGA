@@ -3,7 +3,7 @@ package Game;
 //models an Illuminati card
 public class IlluminatiCard extends Card {
 	
-	int power, tPower, income;
+	int power, tPower, income, currency = 0;
 	char[] exits;
 	
 	//holds a pseudo-library of functions that are used based on effectNum
@@ -48,6 +48,18 @@ public class IlluminatiCard extends Card {
 	
 	public void setExits(char[] pExits) {
 		exits = pExits;
+	}
+	
+	public void addCurrency(int amt) {
+		currency += amt;
+	}
+	
+	public void subCurrency(int amt) {
+		currency -= amt;
+	}
+	
+	public int getCurrency() {
+		return currency;
 	}
 	
 }
