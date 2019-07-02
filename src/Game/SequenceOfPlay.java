@@ -1,6 +1,14 @@
 package Game;
 
+import UI.MainGameScreen;
+
 public class SequenceOfPlay {
+    MainGameScreen mainGameScreen;
+
+    SequenceOfPlay(MainGameScreen mainGameScreen) {
+        this.mainGameScreen = mainGameScreen;
+    }
+
     public void run(PlayerNode currentPlayer) {
         collectIncome();
         drawACard();
@@ -13,7 +21,7 @@ public class SequenceOfPlay {
 
 
     private void collectIncome() {
-
+        mainGameScreen.setPhase("Collect Income");
     }
 
     private void drawACard() {

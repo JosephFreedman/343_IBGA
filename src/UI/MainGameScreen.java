@@ -1,15 +1,19 @@
 package UI;
 
-import Game.RunGame;
+import Game.Dice;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class MainGameScreen extends JFrame {
     private ChatScreen chatScreen;
     private JTextArea info;
     private String phase;
     private String player;
+
+    private JButton rollDice;
 
     public MainGameScreen(int players) {
         setTitle("343_IBGA Main Game");
@@ -29,6 +33,16 @@ public class MainGameScreen extends JFrame {
 
         info = new JTextArea(infoString);
         jPanel.add(info);
+
+        rollDice = new JButton("Roll Dice");
+        ActionListener evt = (ActionEvent event) -> {
+            //System.out.println(event.getActionCommand());
+            int diceRoll = new Dice().getRoll();
+            chatScreen.print("You rolled a " + diceRoll + " on the dice");
+        };
+        rollDice.addActionListener(evt);
+
+        jPanel.add(rollDice);
         return jPanel;
     }
 
@@ -38,17 +52,16 @@ public class MainGameScreen extends JFrame {
 
     public void setPhase(String phase) {
         this.phase = phase;
+        updateInformation();
     }
 
     public void setPlayer(String player) {
         this.player = player;
+        updateInformation();
     }
 
-    public void updateInformation(String phase, String player) {
+    private void updateInformation() {
         String infoString = String.format("Current Phase: %s\nCurrent Player: %s", phase, player);
         info.setText(infoString);
     }
 }
-
-// Phase: Beginning the Game
-// Roll dice

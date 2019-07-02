@@ -49,7 +49,7 @@ public class RunGame {
 
 		beginTheGame();
 
-		SequenceOfPlay sequenceOfPlay = new SequenceOfPlay();
+		SequenceOfPlay sequenceOfPlay = new SequenceOfPlay(mainGameScreen);
 
 		//runs player turns until the game is won or quit is selected
 		while(!finished) {

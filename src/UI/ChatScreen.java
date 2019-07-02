@@ -16,6 +16,7 @@ public class ChatScreen extends JDialog {
         add(initialize());
         pack();
         setVisible(true);
+        setAlwaysOnTop(true);
 
         print("Hello, World!");
     }
@@ -35,7 +36,7 @@ public class ChatScreen extends JDialog {
 
     public void print(String chat) {
         long duration = (System.currentTimeMillis() - startTime) / 1000;
-        chat = String.format("[%d] - %s\n", duration, chat);
+        chat = String.format("[:%d] - %s\n", duration, chat);
         chatBox.setText(chatBox.getText() + chat);
         repaint();
     }
