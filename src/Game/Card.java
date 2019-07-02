@@ -1,3 +1,5 @@
+package Game;
+
 //Models a card object
 public abstract class Card {
 	

@@ -1,11 +1,16 @@
+package Game;
+
 import java.util.ArrayList;
 
 //Subclass of card, models groups without abilities
 public class Group extends Card {
 	
 	//group attributes
-	int power, tPower, resistance, income;
+	int power, tPower, resistance, income, currency = 0;
 	ArrayList<String> alignments;
+	//data holding the entrance and exits for card expansions
+	String entrance;
+	String[] exits;
 	
 	//holds a pseudo-library of functions that are used based on effectNum
 	public void ability() {
@@ -58,12 +63,39 @@ public class Group extends Card {
 		alignments.add(pAlignment);
 	}
 	
+	public String getEntrance() {
+		return entrance;
+	}
+	
+	public String[] getExits() {
+		return exits;
+	}
+	
+	public void setExits(String[] pExits) {
+		exits = pExits;
+	}
+	
 	//sets all variables for the group
-	public void setAll(int p, int t, int r, int i, String[] a) {
+	public void setAll(int p, int t, int r, int i, String[] a, String ent, String[] ex) {
 		power = p;
 		tPower = t;
 		resistance = r;
 		income = i;
+		entrance = ent;
+		exits = ex;
 		for(int j=0;j<a.length;j++) { alignments.add(a[j]); }
 	}
+	
+	public void addCurrency(int amt) {
+		currency += amt;
+	}
+	
+	public void subCurrency(int amt) {
+		currency -= amt;
+	}
+	
+	public int getCurrency() {
+		return currency;
+	}
+	
 }
