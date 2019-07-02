@@ -88,12 +88,13 @@ public class Deck {
 			if(aNames[i].equals("Interference")) { mDeck.add(nCard); }
 		}
 		
+		mDeck = shuffle(mDeck);
 		return mDeck;
 	}
 	
 	
 	//constructs the Illuminati deck
-	public static ArrayList<Card> genIllDeck() {
+	public static ArrayList<Card> genIllDeck(int players) {
 		char[] exits = {'n','s','e','w'};
 		//adds all illuminati to deck
 		for(int i=0;i<iNames.length;i++) {
@@ -107,6 +108,9 @@ public class Deck {
 			nCard.setExits(exits);
 			iDeck.add(nCard);
 		}
+		
+		iDeck = shuffle(iDeck);
+		iDeck = (ArrayList<Card>) iDeck.subList(0, players);
 		
 		return iDeck;
 	}

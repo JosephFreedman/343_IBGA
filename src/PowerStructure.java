@@ -81,17 +81,12 @@ public class PowerStructure {
 			ArrayList<PowerNode> children = pNode.getNext();
 			for(int i=0;i<children.size();i++) {
 				valPos.remove(children.get(i).getGroup().getEntrance());
-				for(int j=0;j<) {
-					
-				}
+				//removal of subsidiaries not yet finished
 			}
+			originalPos = (String[]) valPos.toArray();
 		}
 		
-		return positions;
+		return originalPos;
 	}
 	
-	//removes a given character from a list
-	public char[] removeChar(char[] list, char remove) {
-		List<Character> nList = list.subList(0,remove);
-	}
 }
