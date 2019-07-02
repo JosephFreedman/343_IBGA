@@ -37,7 +37,7 @@ public class TitleScreenMenu extends Application {
 
         root.setPrefSize(1050, 600);
 
-        try (InputStream is = Files.newInputStream(Paths.get("SaTf2TT.jpg"))) {
+        try (InputStream is = Files.newInputStream(Paths.get(System.getProperty("user.dir") + "/src/Images/Splash/Splash.jpg"))) {
             ImageView img = new ImageView(new Image(is));
             img.setFitWidth(1050);
             img.setFitHeight(600);
