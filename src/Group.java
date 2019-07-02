@@ -4,7 +4,7 @@ import java.util.ArrayList;
 public class Group extends Card {
 	
 	//group attributes
-	int power, tPower, resistance, income;
+	int power, tPower, resistance, income, currency = 0;
 	ArrayList<String> alignments;
 	//data holding the entrance and exits for card expansions
 	String entrance;
@@ -83,4 +83,17 @@ public class Group extends Card {
 		exits = ex;
 		for(int j=0;j<a.length;j++) { alignments.add(a[j]); }
 	}
+	
+	public void addCurrency(int amt) {
+		currency += amt;
+	}
+	
+	public void subCurrency(int amt) {
+		currency -= amt;
+	}
+	
+	public int getCurrency() {
+		return currency;
+	}
+	
 }

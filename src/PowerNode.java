@@ -67,4 +67,19 @@ public class PowerNode {
 	public void removeNext(PowerNode pNode) {
 		next.remove(pNode);
 	}
+	
+	//returns an array list of all child nodes
+	public ArrayList<PowerNode> getAllNodes() {
+		ArrayList<PowerNode> allNodes = new ArrayList<PowerNode>();
+		if(this.getNext().isEmpty()) {
+			allNodes.add(this);
+		}
+		else {
+			for(PowerNode child : this.getNext()) {
+				allNodes.addAll(child.getAllNodes());
+			}
+		}
+		return allNodes;
+	}
+	
 }

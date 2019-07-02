@@ -39,7 +39,31 @@ public class PlayerNode {
 	}
 	
 	public void setNext(PlayerNode pNode) {
-		next= pNode;
+		next = pNode;
+	}
+	
+	public void addToHand(Card pCard) {
+		hand.add(pCard);
+	}
+	
+	public void removeFromHand(Card pCard) {
+		hand.remove(pCard);
+	}
+	
+	public ArrayList<Card> getHand() {
+		return hand;
+	}
+	
+	public PowerStructure getPStruct() {
+		return struct;
+	}
+	
+	public int getActions() {
+		return actions;
+	}
+	
+	public void setActions(int pActions) {
+		actions = pActions;
 	}
 	
 }

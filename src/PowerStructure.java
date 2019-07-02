@@ -32,47 +32,7 @@ public class PowerStructure {
 		pDest.updateOrder();
 	}
 	
-	
-//	----------------------------------------------------------
-//	I may use this code in the future but currently its a WIP
-//	----------------------------------------------------------
-//	
-//	
-//	//returns array list of all nodes in structure
-//	public ArrayList<PowerNode> totalNodes() {
-//		ArrayList<PowerNode> allNodes = new ArrayList<PowerNode>();
-//		PowerNode current = source;
-//		PowerNode cPrevious = source;
-//		boolean finished = false;
-//		allNodes.add(current);
-//		while(!finished) {
-//			if(!current.getNext().isEmpty()) { current = cPrevious; }
-//			else {
-//				ArrayList<PowerNode> nList = current.getNext();
-//				int child = 1;
-//				int totalChildren = nList.size();
-//				
-//				
-//			}
-//			
-//		}
-//		
-//		return allNodes;
-//	}
-//	
-//	
-//	//lists all valid positions in a power structure
-//	public char[][] validAdditions() {
-//		char[][] positions;
-//		for(int i=0;i<) {
-//			
-//		}
-//		
-//		return positions;
-//	}
-	
-	
-	//method to list valid positions a node and its subsidiaries can be placed
+	//method to list valid positions a node can be placed
 	public String[] validAdditions(PowerNode pNode) {
 		String[] originalPos = pNode.getGroup().getExits();
 		if(!originalPos.equals(null) && pNode.getNext().size()>0) {
@@ -81,12 +41,14 @@ public class PowerStructure {
 			ArrayList<PowerNode> children = pNode.getNext();
 			for(int i=0;i<children.size();i++) {
 				valPos.remove(children.get(i).getGroup().getEntrance());
-				//removal of subsidiaries not yet finished
 			}
 			originalPos = (String[]) valPos.toArray();
 		}
-		
 		return originalPos;
+	}
+	
+	public PowerNode getSource() {
+		return source;
 	}
 	
 }
