@@ -2,13 +2,14 @@ import java.util.ArrayList;
 
 //Runs the game
 public class RunGame {
-	
-	public RunGame(int players, String[] names) {
-		
+
+	public RunGame(int players) {
+		String[] names = createPlayers(players);
+
 		//builds card decks
 		ArrayList<Card> mDeck = Deck.genMainDeck();
 		ArrayList<Card> iDeck = Deck.genIllDeck(players);
-		
+
 		//generates a node loop of players
 		PlayerNode first = null, currentPlayer = null;
 		for(int i=0;i<players;i++) {
@@ -23,19 +24,30 @@ public class RunGame {
 			}
 		}
 		currentPlayer = first;
-		
-		boolean quit; //makes this elsewhere
-		
+
+
+        SequenceOfPlay sequenceOfPlay = new SequenceOfPlay();
+
+		boolean quit = false; //makes this elsewhere
 		//runs player turns until the game is won or quit is selected
 		while(!checkVictory() && !quit) {
-			
-			
-			
-			
-			
+		    sequenceOfPlay.run(currentPlayer);
+
+
 		}
-		
+
+
+
 	}
-	
-	
+
+	private String[] createPlayers(int players) {
+		String[] playerNames = new String[players];
+		for (int i = 0; i < players; i++)
+			playerNames[i] = "Player " + (i + 1);
+		return playerNames;
+	}
+
+	private boolean checkVictory() {
+		return false;
+	}
 }

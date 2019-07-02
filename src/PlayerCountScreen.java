@@ -1,7 +1,3 @@
-
-
-import javafx.application.Platform;
-
 import java.awt.Dimension;
 import java.awt.GridLayout;
 
@@ -15,7 +11,7 @@ import javax.swing.JLabel;
 import javax.swing.JButton;
 
 
-public class playerCountScreen extends JDialog {
+public class PlayerCountScreen extends JDialog {
 	private JPanel playerCountPanel;
 	
 	private GridLayout playerCountLayout;
@@ -43,10 +39,10 @@ public class playerCountScreen extends JDialog {
 	/**
 	 * Player count selection.
 	 **/
-	protected playerCountScreen(startGameScreen owner, boolean modality)
+	protected PlayerCountScreen(StartGameScreen owner, boolean modality)
 	{
 		//super(owner, modality);
-		setTitle("343_IBGA");
+		setTitle("343_IBGA Player Count");
 		
 		setPreferredSize(new Dimension(150, 280));
 		setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
@@ -113,24 +109,31 @@ public class playerCountScreen extends JDialog {
 	{
 		ActionListener evt = (ActionEvent event) -> {
 		    System.out.println(event.getActionCommand());
-
+		    int players = 0;
 		    switch (event.getActionCommand()) {
 				case "twoPlayersBtn":
+					players = 2;
 					break;
 				case "threePlayersBtn":
+					players = 3;
 					break;
 				case "fourPlayersBtn":
+					players = 4;
 					break;
 				case "fivePlayersBtn":
+					players = 5;
 					break;
 				case "sixPlayersBtn":
+					players = 6;
 					break;
 				case "sevenPlayersBtn":
+					players = 7;
 					break;
 				case "eightPlayersBtn":
+					players = 8;
 					break;
 			}
-
+			MainGameScreen mainGameScreen = new MainGameScreen(players);
             dispose();
 		};
 		twoPlayersBtn.addActionListener(evt);

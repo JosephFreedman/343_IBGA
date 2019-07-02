@@ -136,7 +136,7 @@ public class TitleScreenMenu extends Application {
                 bg.setFill(gradient);
                 switch (name) {
                     case "START GAME":
-                        startGameScreen startGameScreen = new startGameScreen();
+                        StartGameScreen startGameScreen = new StartGameScreen();
                         break;
                     case "OPTION":
                         break;
