@@ -1,3 +1,5 @@
+package Game;
+
 //models an Illuminati card
 public class IlluminatiCard extends Card {
 	

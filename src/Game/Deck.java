@@ -1,3 +1,5 @@
+package Game;
+
 import java.util.ArrayList;
 import java.util.Random;
 
@@ -71,7 +73,7 @@ public class Deck {
 		//adds all groups to deck
 		for(int i=0;i<gNames.length;i++) {
 			Group nCard = new Group();
-			nCard.setType("Group");
+			nCard.setType("Game.Group");
 			nCard.setName(gNames[i]);
 			nCard.setEffectNum(gAbility[i]);
 			nCard.setAll(gPower[i], gTrans[i], gRes[i], gInc[i], gAlignments[i], gEntrance[i], gExits[i]);

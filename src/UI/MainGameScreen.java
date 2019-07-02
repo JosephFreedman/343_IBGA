@@ -1,3 +1,7 @@
+package UI;
+
+import Game.RunGame;
+
 import javax.swing.*;
 import java.awt.*;
 

@@ -1,3 +1,5 @@
+package Game;
+
 public class SequenceOfPlay {
     public void run(PlayerNode currentPlayer) {
         collectIncome();

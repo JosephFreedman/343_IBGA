@@ -1,3 +1,5 @@
+package Game;
+
 //Serves as both a model of an action card and a library of their abilities
 public class ActionCard extends Card {
 	

@@ -1,3 +1,5 @@
+package Game;
+
 import java.util.ArrayList;
 
 //Emulates a card in the power structure

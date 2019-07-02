@@ -1,5 +1,6 @@
+package Game;
+
 import java.util.ArrayList;
-import java.util.List;
 
 //Models the power structure of a player
 public class PowerStructure {
@@ -39,16 +40,16 @@ public class PowerStructure {
 //	
 //	
 //	//returns array list of all nodes in structure
-//	public ArrayList<PowerNode> totalNodes() {
-//		ArrayList<PowerNode> allNodes = new ArrayList<PowerNode>();
-//		PowerNode current = source;
-//		PowerNode cPrevious = source;
+//	public ArrayList<Game.PowerNode> totalNodes() {
+//		ArrayList<Game.PowerNode> allNodes = new ArrayList<Game.PowerNode>();
+//		Game.PowerNode current = source;
+//		Game.PowerNode cPrevious = source;
 //		boolean finished = false;
 //		allNodes.add(current);
 //		while(!finished) {
 //			if(!current.getNext().isEmpty()) { current = cPrevious; }
 //			else {
-//				ArrayList<PowerNode> nList = current.getNext();
+//				ArrayList<Game.PowerNode> nList = current.getNext();
 //				int child = 1;
 //				int totalChildren = nList.size();
 //				

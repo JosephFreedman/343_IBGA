@@ -1,3 +1,5 @@
+package Game;
+
 import java.util.ArrayList;
 
 //Holds player information
